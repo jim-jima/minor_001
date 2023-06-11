@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"> 
+  {% include "style.html" %}
+</head>
+<body>
+    {% include "navigation.html" %}
+	<article align="center"> Заказать праздник </article>
+	<br>
+	<br>
+	<table background="../static/img/blue.jpg" border="1" cellspacing="1" cellpadding="1" align="center">
+	<tr>
+	    <th>
+		<img src="../static/img/hb.jpg" height=100px width=100px>
+		</th>
+		<th>
+		День рождения
+		<br>
+		30 000 рублей
+		</th>
+	</tr>
+	<tr>
+		<th>
+		<a href="https://vk.com/nochfest" class="form">Фестиваль</a>
+		</th>
+		<th>
+		60 000 рублей
+		</th>
+	</tr>
+	</table>
+	<br>
+	<br>
+	<article align="center" name="party_form"> Оставьте свои пожелания, и мы с вами свяжемся </article>
+	<br>
+	<form action="http://g06u33.nn2000.info/cgi-bin/form_action.py" method='get' target='_self'>
+		<fieldset>
+			<p class="form">Номер телефона: <input type="Number" name="phone" value="89296732828" size=8></p>
+			<p class="form">Пожелания <input type="textarea" name="wishes" value="шарики" size=16></p>
+			<p> <input type="Reset" name="Reset" value="Обновить" >
+            <input type="Submit" name="submit" value="Отправить" class="Button">
+            </p>
+	    </fieldset>
+	</form>
+</body>
+</html>
