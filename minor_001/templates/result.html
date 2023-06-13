@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result for {{ money }}</title>
+</head>
+<body>
+
+<table aling="center" border=1 cellpadding="10" cellspacing="0">
+	<tr>
+	    <th>
+		Введённое число
+		</th>
+        <th>
+		По 500
+		</th>
+        <th>
+		По 100
+		</th>
+        <th>
+		По 10
+		</th>
+        <th>
+		По 2
+		</th>
+        <th>
+		Остаток (нельзя ничем разменять)
+		</th>
+	</tr>
+	<tr>
+		<td>
+		{{ money }}
+		</td>
+		<td>
+		{{ by_500 }}
+		</td>
+        <td>
+		{{ by_100 }}
+		</td>
+        <td>
+		{{ by_10 }}
+		</td>
+        <td>
+		{{ by_2 }}
+		</td>
+        <td>
+		{{ remainder }}
+		</td>
+	</tr>
+	</table>
+<br>
+<table aling="center" border=1 cellpadding="10" cellspacing="0">
+	<tr>
+	    <th>
+		Введённое число
+		</th>
+        <th>
+		По 500
+		</th>
+        <th>
+		По 100
+		</th>
+        <th>
+		По 10
+		</th>
+        <th>
+		По 2
+		</th>
+        <th>
+		Остаток (нельзя ничем разменять)
+		</th>
+	</tr>
+	{% for obj in all %}
+	<tr>
+		<td>
+			{{ obj.money }}
+		</td>
+		<td>
+			{{ obj.by_500 }}
+		</td>
+		<td>
+			{{ obj.by_100 }}
+		</td>
+		<td>
+			{{ obj.by_10 }}
+		</td>
+		<td>
+			{{ obj.by_2 }}
+		</td>
+		<td>
+			{{ obj.remainder }}
+		</td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+<p>
+	Статистика по всем введённым числам: <br>
+	Всего введено {{ all.count }} чисел <br>
+	Самое большое число {{ all.first.money }} <br>
+	Самое маленькое число {{ all.last.money }} <br>
+	Медиана {{ median }} <br>
+	Среднее арифметическое {{ average }}
+</p>
+</body>
+</html>
