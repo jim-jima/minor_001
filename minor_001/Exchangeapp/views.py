@@ -7,7 +7,7 @@ from statistics import median, mean
 
 
 def error404(request):
-    return render(request, "404.html")
+    return render(request, "exchange/404.html")
 
 def exchange(request):
     if request.method == 'POST':
@@ -30,7 +30,7 @@ def exchange(request):
                 return redirect('error404')
 
     form = ExchangeForm()
-    return render(request, 'exchange.html', {'form': form}, RequestContext(request))
+    return render(request, 'exchange/exchange.html', {'form': form}, RequestContext(request))
 
 def get_result(request, money):
     result = get_object_or_404(ExchangeModel, money=money)
@@ -48,4 +48,4 @@ def get_result(request, money):
         'average': mean(all_money)
     }
 
-    return render(request, 'result.html', context)
+    return render(request, 'exchange/result.html', context)

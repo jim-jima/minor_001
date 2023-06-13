@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+<h3>1006. Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</h3>
+<br>
 <form method ="post"
                 action=
                   "{% url 'exchange' %}">
@@ -18,7 +20,7 @@
                 {% endfor %}
                 <div class="d-flex justify-content-end">
                   <button type="submit" class="btn btn-primary">
-                    Сохранить
+                    Разменять!
                   </button>
                 </div>
 </form>

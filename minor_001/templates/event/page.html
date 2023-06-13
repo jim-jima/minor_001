@@ -1,0 +1,22 @@
+{% extends 'event/layout.html' %}
+
+{% block title %}<title>{{ content_object.item_title }}</title>{% endblock %}
+
+{% block content %}
+{% load static %}
+    <aside>
+            <h1>Навигация <a href="{% url 'page' pk=1 %}"><img src="{% static 'img/logo.png' %}" height=50px width=50px></a> </h1>
+            <ul>
+                {% for object in nav_objects %}
+                <a class="{% if pk == object.id %}active{% else %}{% endif %}"
+                               href="{% url 'page' pk=object.id %}"><li>{{ object.site_nav }}</li></a>
+                {% endfor %}
+                <br>
+                <p class="vk"><a href="https://vk.com/natasha.kuzina" target="_blank"><img src="{% static 'img/vk.png' %}" height=70px width=70px></a></p>
+            </ul>
+    </aside>
+     <div class="card-body">
+                {% autoescape off %}{{ content_object.site_title }}{% endautoescape %}
+                {% autoescape off %}{{ content_object.site_content }}{% endautoescape %}
+     </div>
+{% endblock %}

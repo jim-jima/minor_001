@@ -1,4 +1,9 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} {% endblock %}
+  <style>
 	  aside {
 	  background-color: #6263f0;
 	  width: 20%;
@@ -33,7 +38,7 @@
         color: transparent
       }
 	  body {
-	  background: url("../static/img/background.gif") no-repeat;
+	  background: url("../../static/img/background.gif") no-repeat;
 	  background-size: 100%
 	  }
 	  article {
@@ -44,3 +49,8 @@
 	  margin-left: 500px;
 	  }
   </style>
+</head>
+<body>
+{% block content %}    {% endblock %}
+</body>
+</html>
